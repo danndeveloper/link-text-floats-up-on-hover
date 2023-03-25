@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.link {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    color: black;
+}
+
+.link__text {
+    display: inline-block;
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 200ms ease-in-out;
+}
+
+.link::after {
+    position: absolute;
+    content: 'This text floats up on hover';
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform 200ms ease-in-out;
+}
+
+.link:hover .link__text {
+    transform: translateY(-100%);
+}
+
+.link:hover::after {
+    transform: translateY(0);
+}
